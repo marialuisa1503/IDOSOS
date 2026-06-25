@@ -111,3 +111,28 @@ footer {
     outline: 4px solid #FFC107;
     outline-offset: 4px;
 }
+/* Configuracoes estritas para o modo de alto contraste */
+body.alto-contraste {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.alto-contraste .cabecalho {
+    border-bottom: 2px solid #ffffff !important;
+}
+
+body.alto-contraste .cartao-dica {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 3px solid #ffffff !important;
+}
+
+body.alto-contraste .titulo-dica {
+    color: #ffff00 !important;
+}
+
+body.alto-contraste .botao-controle {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 3px solid #ffff00 !important;
+}
