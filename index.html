@@ -1,42 +1,113 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Guia de Seguranca</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body id="corpo">
+<!-- Cabecalho Fixo de Acessibilidade -->
+  <header class="barra-acessibilidade">
+    <div class="titulo-principal">Guia de Seguranca para Idosos</div>
+    <div class="grupo-botoes-acessibilidade">
+      <button class="botao-opcao" id="botao-aumentar" onclick="funcaoAumentarFonte()" aria-label="Aumentar tamanho do texto">Letra A+</button>
+      <button class="botao-opcao" id="botao-diminuir" onclick="funcaoDiminuirFonte()" aria-label="Diminuir tamanho do texto">Letra A-</button>
+      <button class="botao-opcao" id="botao-contraste" onclick="funcaoAlternarContraste()" aria-label="Alternar alto contraste">Alto Contraste</button>
+    </div>
+  </header>
 
-    <header class="cabecalho">
-        <h1 class="titulo-principal">Guia Antigolpe</h1>
-        <div class="controles">
-            <button id="botao-aumentar" class="botao-controle">Aumentar Letra</button>
-            <button id="botao-diminuir" class="botao-controle">Diminuir Letra</button>
-            <button id="botao-contraste" class="botao-controle">Alto Contraste</button>
+  <!-- Corpo do Site -->
+  <main class="conteudo-principal">
+    
+    <!-- Area de boas vindas -->
+    <section class="introducao">
+      <h2>Proteja-se contra fraudes e golpes</h2>
+      <p>Este aplicativo foi criado para ajudar voce a identificar mentiras e armadilhas comuns que os criminosos usam por telefone, internet e mensagens.</p>
+      <p>Clique nos cartoes abaixo para aprender a se defender de cada situacao perigosa.</p>
+    </section>
+
+    <!-- Cartoes com os golpes explicados -->
+    <h2 class="secao-titulo">Golpes Comuns</h2>
+    
+    <section class="grade-golpes">
+      
+      <div class="cartao-golpe" onclick="funcaoAbrirGolpe('falso-banco')">
+        <div>
+          <h3>Falso Funcionario de Banco</h3>
+          <p>Alguem liga dizendo que a sua conta foi invadida e pede para transferir dinheiro ou entregar o seu cartao para um motoboy.</p>
         </div>
-    </header>
+        <button class="botao-saber-mais">Como se proteger</button>
+      </div>
 
-    <main class="conteudo-principal">
-        <section class="secao-dicas">
-            <h2 class="subtitulo">Dicas Importantes de Seguranca</h2>
+      <div class="cartao-golpe" onclick="funcaoAbrirGolpe('zap-clonado')">
+        <div>
+          <h3>Falso Parente no Whatsapp</h3>
+          <p>Um numero novo finge ser o seu filho ou neto, diz que o celular quebrou e pede dinheiro emprestado urgente por Pix.</p>
+        </div>
+        <button class="botao-saber-mais">Como se proteger</button>
+      </div>
 
-            <div class="cartao-dica">
-                <h3 class="titulo-dica">Golpe do WhatsApp</h3>
-                <p class="texto-dica">Se um parente pedir dinheiro por mensagem usando um numero novo, nao envie. Ligue para o numero antigo para confirmar se e verdade.</p>
-            </div>
+      <div class="cartao-golpe" onclick="funcaoAbrirGolpe('falso-premio')">
+        <div>
+          <h3>Premio ou Sorteio Falso</h3>
+          <p>Voce recebe uma mensagem dizendo que ganhou um carro ou dinheiro, mas precisa pagar uma taxa antes para liberar o premio.</p>
+        </div>
+        <button class="botao-saber-mais">Como se proteger</button>
+      </div>
 
-            <div class="cartao-dica">
-                <h3 class="titulo-dica">Ligacao do Banco</h3>
-                <p class="texto-dica">O banco nao liga pedindo sua senha e nao pede para transferir dinheiro. Se receber essa ligacao, desligue imediatamente.</p>
-            </div>
+      <div class="cartao-golpe" onclick="funcaoAbrirGolpe('falsa-assinatura')">
+        <div>
+          <h3>Compra nao Autorizada</h3>
+          <p>Uma mensagem de texto diz que voce fez uma compra grande no cartao e da um numero falso para ligar e cancelar.</p>
+        </div>
+        <button class="botao-saber-mais">Como se proteger</button>
+      </div>
 
-            <div class="cartao-dica">
-                <h3 class="titulo-dica">Premios Falsos</h3>
-                <p class="texto-dica">Se voce ganhar um sorteio ou premio que nao participou, e golpe. Nao pague nenhuma taxa para receber o valor.</p>
-            </div>
-        </section>
-    </main>
+    </section>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <!-- Joguinho para testar aprendizado -->
+    <section class="bloco-simulado">
+      <h2 style="margin-bottom: 15px; color: var(--cor-primaria);">Teste o seu Conhecimento</h2>
+      <p style="margin-bottom: 20px;">Leia a situacao de exemplo abaixo e escolha a melhor opcao de seguranca.</p>
+      
+      <div id="area-pergunta">
+        <div class="pergunta-texto">
+          Situacao: Voce recebe uma ligacao de uma pessoa muito educada que diz ser do seu banco. Ela afirma que o seu cartao foi clonado e que um motoboy vai na sua casa buscar o cartao para a pericia. O que voce deve fazer?
+        </div>
+        <div class="opcoes-resposta">
+          <button class="botao-resposta" onclick="funcaoVerificarResposta(false, 'banco')">Entregar o cartao para o motoboy para resolver logo o problema.</button>
+          <button class="botao-resposta" onclick="funcaoVerificarResposta(false, 'banco')">Passar a senha por telefone para que eles possam bloquear o cartao.</button>
+          <button class="botao-resposta" onclick="funcaoVerificarResposta(true, 'banco')">Nao entregar nada. Desligar a ligacao e ligar para o numero oficial que esta atras do seu cartao fisico.</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contatos importantes do Brasil -->
+    <section class="bloco-contatos">
+      <h2 style="color: var(--cor-primaria);">Numeros de Apoio e Emergencia</h2>
+      <p>Se desconfiar de uma situacao ou se foi vitima de fraude, ligue imediatamente para as autoridades:</p>
+      
+      <ul class="lista-contatos">
+        <li class="item-contato">
+          <span class="contato-nome">Policia Militar (Emergencia)</span>
+          <a href="tel:190" class="contato-numero">Ligar 190</a>
+        </li>
+        <li class="item-contato">
+          <span class="contato-nome">Disque Denuncia</span>
+          <a href="tel:181" class="contato-numero">Ligar 181</a>
+        </li>
+        <li class="item-contato">
+          <span class="contato-nome">Direitos Humanos / Idoso</span>
+          <a href="tel:100" class="contato-numero">Ligar 100</a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Janela Pop-up (Modal) que vai abrir na tela -->
+  <div class="fundo-modal" id="modal-alerta" onclick="funcaoFecharModalFora(event)">
+    <div class="conteudo-modal">
+      <div class="cabecalho-modal">
+        <span id="modal-titulo">Titulo da Caixa</span>
+      </div>
+      <div class="corpo-modal" id="modal-corpo">
+        <!-- O conteudo vai ser colocado aqui pelo JavaScript -->
+      </div>
+      <div class="rodape-modal">
+        <button class="botao-fechar-modal" onclick="funcaoFecharModal()">Fechar e Voltar</button>
+      </div>
+    </div>
+  </div>
