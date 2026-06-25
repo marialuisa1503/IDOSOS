@@ -1,4 +1,4 @@
-/* Configurações de cores para alto contraste e fontes grandes */
+/* Configuracoes de cores para alto contraste e fontes grandes */
 :root {
     --cor-fundo: #F4F6F8;
     --cor-texto: #1A1A1A;
@@ -34,7 +34,7 @@ header p {
     font-size: 1.2em;
 }
 
-/* Estilo para os botões de aumentar/diminuir letra */
+/* Estilo para os botoes de aumentar/diminuir letra */
 .controles-texto {
     margin-top: 20px;
 }
