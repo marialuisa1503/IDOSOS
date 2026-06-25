@@ -1,4 +1,13 @@
-<!-- Cabecalho Fixo de Acessibilidade -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo de Prevencao de Golpes</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
   <header class="barra-acessibilidade">
     <div class="titulo-principal">Guia de Seguranca para Idosos</div>
     <div class="grupo-botoes-acessibilidade">
@@ -8,17 +17,14 @@
     </div>
   </header>
 
-  <!-- Corpo do Site -->
   <main class="conteudo-principal">
     
-    <!-- Area de boas vindas -->
     <section class="introducao">
       <h2>Proteja-se contra fraudes e golpes</h2>
       <p>Este aplicativo foi criado para ajudar voce a identificar mentiras e armadilhas comuns que os criminosos usam por telefone, internet e mensagens.</p>
       <p>Clique nos cartoes abaixo para aprender a se defender de cada situacao perigosa.</p>
     </section>
 
-    <!-- Cartoes com os golpes explicados -->
     <h2 class="secao-titulo">Golpes Comuns</h2>
     
     <section class="grade-golpes">
@@ -57,7 +63,6 @@
 
     </section>
 
-    <!-- Joguinho para testar aprendizado -->
     <section class="bloco-simulado">
       <h2 style="margin-bottom: 15px; color: var(--cor-primaria);">Teste o seu Conhecimento</h2>
       <p style="margin-bottom: 20px;">Leia a situacao de exemplo abaixo e escolha a melhor opcao de seguranca.</p>
@@ -74,7 +79,6 @@
       </div>
     </section>
 
-    <!-- Contatos importantes do Brasil -->
     <section class="bloco-contatos">
       <h2 style="color: var(--cor-primaria);">Numeros de Apoio e Emergencia</h2>
       <p>Se desconfiar de uma situacao ou se foi vitima de fraude, ligue imediatamente para as autoridades:</p>
@@ -97,17 +101,19 @@
 
   </main>
 
-  <!-- Janela Pop-up (Modal) que vai abrir na tela -->
   <div class="fundo-modal" id="modal-alerta" onclick="funcaoFecharModalFora(event)">
     <div class="conteudo-modal">
       <div class="cabecalho-modal">
         <span id="modal-titulo">Titulo da Caixa</span>
       </div>
       <div class="corpo-modal" id="modal-corpo">
-        <!-- O conteudo vai ser colocado aqui pelo JavaScript -->
-      </div>
+        </div>
       <div class="rodape-modal">
         <button class="botao-fechar-modal" onclick="funcaoFecharModal()">Fechar e Voltar</button>
       </div>
     </div>
   </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
