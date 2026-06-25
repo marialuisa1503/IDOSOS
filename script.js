@@ -15,3 +15,7 @@ function mudarTamanhoTexto(modificador) {
     // Aplica o novo tamanho de fonte ao corpo inteiro da pagina (body)
     document.body.style.fontSize = tamanhoFonteAtual + "px";
 }
+    // Acao para ativar ou desativar o modo de alto contraste
+    botaoContraste.addEventListener('click', function() {
+    corpo.classList.toggle('alto-contraste');
+});
