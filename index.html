@@ -2,66 +2,41 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Seguranca Digital</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Guia de Seguranca</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
-<body>
+<body id="corpo">
 
-    <header>
-        <h1>Internet Segura</h1>
-        <p>Um guia simples para voce navegar sem medo</p>
-        
-        <div class="controles-texto">
-            <button onclick="mudarTamanhoTexto(1)">Aumentar Letra +</button>
-            <button onclick="mudarTamanhoTexto(-1)">Diminuir Letra -</button>
+    <header class="cabecalho">
+        <h1 class="titulo-principal">Guia Antigolpe</h1>
+        <div class="controles">
+            <button id="botao-aumentar" class="botao-controle">Aumentar Letra</button>
+            <button id="botao-diminuir" class="botao-controle">Diminuir Letra</button>
+            <button id="botao-contraste" class="botao-controle">Alto Contraste</button>
         </div>
     </header>
 
-    <main id="conteudo-principal">
-        <p class="introducao">
-            A internet e um lugar maravilhoso, mas precisamos tomar alguns cuidados. Leia as dicas abaixo com atencao:
-        </p>
+    <main class="conteudo-principal">
+        <section class="secao-dicas">
+            <h2 class="subtitulo">Dicas Importantes de Seguranca</h2>
 
-        <article class="cartao-dica">
-            <h2>1. Cuidado com mensagens urgentes</h2>
-            <p>Se voce receber uma mensagem no WhatsApp ou SMS dizendo que seu banco bloqueou sua conta ou que voce ganhou um premio, <strong>desconfie</strong>. Golpistas usam o desespero e a urgência para enganar.</p>
-            <div class="alerta">Dica de ouro: Na duvida, ligue para a pessoa ou para o banco antes de fazer qualquer coisa.</div>
-        </article>
+            <div class="cartao-dica">
+                <h3 class="titulo-dica">Golpe do WhatsApp</h3>
+                <p class="texto-dica">Se um parente pedir dinheiro por mensagem usando um numero novo, nao envie. Ligue para o numero antigo para confirmar se e verdade.</p>
+            </div>
 
-        <article class="cartao-dica">
-            <h2>2. Nao clique em links desconhecidos</h2>
-            <p>Sabe aqueles links azuis que chegam com promocoes boas demais para serem verdade? Evite clicar neles. Eles podem levar voce para sites falsos que tentam roubar suas informações.</p>
-            <div class="alerta">Dica de ouro: Promocao de TV por R$ 100,00? Provavelmente e mentira.</div>
-        </article>
+            <div class="cartao-dica">
+                <h3 class="titulo-dica">Ligacao do Banco</h3>
+                <p class="texto-dica">O banco nao liga pedindo sua senha e nao pede para transferir dinheiro. Se receber essa ligacao, desligue imediatamente.</p>
+            </div>
 
-        <article class="cartao-dica">
-            <h2>3. Senhas sao como escovas de dente</h2>
-            <p>Elas sao de uso pessoal, nao devem ser emprestadas e voce deve trocar de vez em quando! Nunca use datas de aniversario ou sequencias faceis como "123456".</p>
-            <div class="alerta">Dica de ouro: Anote suas senhas num caderno de papel e guarde-o em um lugar seguro na sua casa.</div>
-        </article>
-
-        <article class="cartao-dica">
-            <h2>4. Cuidado com quem pede dinheiro</h2>
-            <p>Se um filho, neto ou amigo mandar mensagem de um numero novo pedindo dinheiro ou Pix de emergencia, <strong>nao mande</strong>. Golpistas costumam roubar fotos e fingir ser alguém da sua família.</p>
-            <div class="alerta">Dica de ouro: Faca uma chamada de voz e ouca a pessoa antes de enviar qualquer quantia.</div>
-        </article>
+            <div class="cartao-dica">
+                <h3 class="titulo-dica">Premios Falsos</h3>
+                <p class="texto-dica">Se voce ganhar um sorteio ou premio que nao participou, e golpe. Nao pague nenhuma taxa para receber o valor.</p>
+            </div>
+        </section>
     </main>
-
-    <footer>
-        <p>Compartilhe essas dicas com seus amigos e familiares.</p>
-        <p><strong>Navegue com seguranca!</strong></p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-<button id="botao-abrir-modal" class="botao-controle">Ver Aviso Importante</button>
-
-<div id="caixa-modal" class="modal-fundo">
-    <div class="modal-conteudo">
-        <h2>Aviso de Seguranca</h2>
-        <p>Lembre-se sempre: O banco nunca pede a sua senha por telefone ou mensagem. Se tiver duvidas, desligue a chamada e va ao balcao do seu banco.</p>
-        <button id="botao-fechar-modal" class="botao-controle">Entendi, fechar aviso</button>
-    </div>
-</div>
