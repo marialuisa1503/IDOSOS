@@ -110,3 +110,46 @@ function funcaoVerificarResposta(respostaCorreta, tipoGolpe) {
   document.getElementById("modal-corpo").innerHTML = conteudoHtml;
   document.getElementById("modal-alerta").style.display = "flex";
 }
+// Variável global para controlar se está a ler ou não
+let lendoTela = false;
+
+// Função para ler todo o texto da tela ou parar a leitura
+function funcaoLerTela() {
+  // Verifica se o navegador suporta a funcionalidade de voz
+  if ('speechSynthesis' in window) {
+    
+    // Se já estiver a ler, para a leitura
+    if (lendoTela) {
+      window.speechSynthesis.cancel();
+      lendoTela = false;
+      document.getElementById("botao-leitura").innerText = "Ler Tela (Desativado)";
+      return;
+    }
+
+    // Pega todo o texto legível da página (dentro da tag main para evitar ler os botões do cabeçalho)
+    const conteudoPrincipal = document.querySelector('.conteudo-principal');
+    let textoParaLer = conteudoPrincipal ? conteudoPrincipal.innerText : document.body.innerText;
+
+    // Cria o objeto de fala
+    const mensagem = new SpeechSynthesisUtterance(textoParaLer);
+    
+    // Configura para português do Brasil (ou Portugal, dependendo da voz disponível no sistema)
+    mensagem.lang = 'pt-BR'; 
+    mensagem.rate = 0.9; // Velocidade um pouco mais lenta para facilitar a compreensão
+    mensagem.pitch = 1; // Tom normal
+
+    // Evento que dispara quando a leitura termina naturalmente
+    mensagem.onend = function() {
+      lendoTela = false;
+      document.getElementById("botao-leitura").innerText = "Ler Tela";
+    };
+
+    // Inicia a leitura
+    window.speechSynthesis.speak(mensagem);
+    lendoTela = true;
+    document.getElementById("botao-leitura").innerText = "Parar Leitura";
+    
+  } else {
+    alert("Desculpe, o seu navegador não suporta a leitura de tela em voz alta.");
+  }
+}
