@@ -110,15 +110,15 @@ function funcaoVerificarResposta(respostaCorreta, tipoGolpe) {
   document.getElementById("modal-corpo").innerHTML = conteudoHtml;
   document.getElementById("modal-alerta").style.display = "flex";
 }
-// Variável global para controlar se está a ler ou não
+// Variavel global para controlar se esta a ler ou nao
 let lendoTela = false;
 
-// Função para ler todo o texto da tela ou parar a leitura
+// Funcao para ler todo o texto da tela ou parar a leitura
 function funcaoLerTela() {
   // Verifica se o navegador suporta a funcionalidade de voz
   if ('speechSynthesis' in window) {
     
-    // Se já estiver a ler, para a leitura
+    // Se ja estiver a ler, para a leitura
     if (lendoTela) {
       window.speechSynthesis.cancel();
       lendoTela = false;
@@ -126,16 +126,16 @@ function funcaoLerTela() {
       return;
     }
 
-    // Pega todo o texto legível da página (dentro da tag main para evitar ler os botões do cabeçalho)
+    // Pega todo o texto legivel da pagina (dentro da tag main para evitar ler os botoes do cabecalho)
     const conteudoPrincipal = document.querySelector('.conteudo-principal');
     let textoParaLer = conteudoPrincipal ? conteudoPrincipal.innerText : document.body.innerText;
 
     // Cria o objeto de fala
     const mensagem = new SpeechSynthesisUtterance(textoParaLer);
     
-    // Configura para português do Brasil (ou Portugal, dependendo da voz disponível no sistema)
+    // Configura para portugues do Brasil (ou Portugal, dependendo da voz disponivel no sistema)
     mensagem.lang = 'pt-BR'; 
-    mensagem.rate = 0.9; // Velocidade um pouco mais lenta para facilitar a compreensão
+    mensagem.rate = 0.9; // Velocidade um pouco mais lenta para facilitar a compreensao
     mensagem.pitch = 1; // Tom normal
 
     // Evento que dispara quando a leitura termina naturalmente
@@ -150,6 +150,6 @@ function funcaoLerTela() {
     document.getElementById("botao-leitura").innerText = "Parar Leitura";
     
   } else {
-    alert("Desculpe, o seu navegador não suporta a leitura de tela em voz alta.");
+    alert("Desculpe, o seu navegador nao suporta a leitura de tela em voz alta.");
   }
 }
