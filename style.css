@@ -36,7 +36,7 @@ body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   line-height: 1.6;
-  font-size: 18px; /* Tamanho inicial da letra grande para leitura facil */
+  font-size: 18px;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -76,7 +76,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   min-width: 44px;
-  min-height: 44px; /* Area boa para o toque do dedo */
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -354,4 +354,3 @@ body {
 .erro-texto {
   color: var(--cor-perigo);
 }
-  

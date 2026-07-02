@@ -110,6 +110,7 @@ function funcaoVerificarResposta(respostaCorreta, tipoGolpe) {
   document.getElementById("modal-corpo").innerHTML = conteudoHtml;
   document.getElementById("modal-alerta").style.display = "flex";
 }
+
 // Variavel global para controlar se esta a ler ou nao
 let lendoTela = false;
 
@@ -133,7 +134,7 @@ function funcaoLerTela() {
     // Cria o objeto de fala
     const mensagem = new SpeechSynthesisUtterance(textoParaLer);
     
-    // Configura para portugues do Brasil (ou Portugal, dependendo da voz disponivel no sistema)
+    // Configura para portugues do Brasil
     mensagem.lang = 'pt-BR'; 
     mensagem.rate = 0.9; // Velocidade um pouco mais lenta para facilitar a compreensao
     mensagem.pitch = 1; // Tom normal
